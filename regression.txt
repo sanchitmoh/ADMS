@@ -1,0 +1,48 @@
+//regression
+data <- data.frame(
+  hours = c(2,4,6,8,10),
+  marks = c(40,50,65,75,85)
+)
+data
+
+plot(data$hours, data$marks,
+     main = "Hours Studied vs Marks",
+     xlab = "Hours Studied",
+     ylab = "Marks",
+     pch = 16)
+model <- lm(marks ~ hours, data = data)
+model
+summary(model)
+coef(model)
+abline(model, col = "blue", lwd = 2)
+predict(model, data.frame(hours = 7))
+residuals(model)
+
+
+//multilinear regression
+//Visualizing MPG vs HP
+ggplot(fit, aes(hp, mpg))
+//Adding Points and Regression Line
+ggplot(fit, aes(hp, mpg)) +
+  geom_point() +
+  stat_smooth(method = lm, se = FALSE)
+// Highlighting Predicted vs Actual Points
+hp, ypred = fitted(), color = "red", size = 0.3
+//Creating Linear Regression Mode
+lmodel1 <- lm(mpg ~ hp + cyl + gear + wt, data = TrainData)
+//Model Summary
+summary(lmodel1)
+//STEP 6️⃣ Predicting MPG for Test Data
+preds_new <- predict(lmodel1, newdata = TestData)
+//Comparing Predicted vs Actual MPG
+df2 <- data.frame(preds_new, TestData$mpg)
+head(df2)
+//Accuracy Using Correlation
+cor(preds_new, TestData$mpg)
+//2D Plot (Actual Relationship)
+plot(mtcars$hp + mtcars$cyl + mtcars$gear + mtcars$wt, mtcars$mpg)
+//ggplot with Multiple Predictors
+ggplot(fit, aes(mtcars$hp + mtcars$cyl + mtcars$gear + mtcars$wt, mpg)) +
+  geom_point() +
+  stat_smooth(method = lm)
+

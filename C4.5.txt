@@ -1,0 +1,28 @@
+//C4.5
+data <- data.frame(
+  Outlook = c("Sunny","Sunny","Overcast","Rain","Rain","Rain","Overcast","Sunny"),
+  Temperature = c(85,80,83,70,68,65,64,72),
+  Humidity = c(85,90,78,96,80,70,65,95),
+  Wind = c("Weak","Strong","Weak","Weak","Weak","Strong","Strong","Weak"),
+  PlayTennis = c("No","No","Yes","Yes","Yes","No","Yes","No")
+)
+data
+
+data$PlayTennis <- as.factor(data$PlayTennis)
+str(data)
+
+install.packages("C50")   # only once
+library(C50)
+
+model <- C5.0(
+  x = data[, -5],   # predictors
+  y = data$PlayTennis
+)
+
+summary(model)
+plot(model)
+pred <- predict(model, data[, -5])
+pred
+table(Predicted = pred, Actual = data$PlayTennis)
+accuracy <- sum(pred == data$PlayTennis) / nrow(data)
+accuracy

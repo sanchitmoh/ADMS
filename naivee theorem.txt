@@ -1,0 +1,35 @@
+//naivee theorem
+data <- data.frame(
+  Outlook = c("Sunny","Sunny","Overcast","Rain","Rain","Rain","Overcast","Sunny"),
+  Temperature = c("Hot","Hot","Hot","Mild","Cool","Cool","Mild","Cool"),
+  Humidity = c("High","High","High","High","Normal","Normal","Normal","High"),
+  Wind = c("Weak","Strong","Weak","Weak","Weak","Strong","Strong","Weak"),
+  PlayTennis = c("No","No","Yes","Yes","Yes","No","Yes","No")
+)
+data
+
+data[] <- lapply(data, factor)
+str(data)
+
+install.packages("e1071")   # only once
+library(e1071)
+
+model <- naiveBayes(PlayTennis ~ ., data = data)
+model
+
+model$apriori
+
+model$tables
+
+pred <- predict(model, data)
+pred
+
+predict(model, data, type = "raw")
+
+table(Predicted = pred, Actual = data$PlayTennis)
+
+accuracy <- sum(pred == data$PlayTennis) / nrow(data)
+accuracy
+
+
+

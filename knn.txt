@@ -1,0 +1,38 @@
+//knn
+data(iris)
+head(iris)
+
+str(iris)
+
+x <- iris[, 1:4]     # Features
+y <- iris$Species   # Class
+
+normalize <- function(x) {
+  return ((x - min(x)) / (max(x) - min(x)))
+}
+
+x_norm <- as.data.frame(lapply(x, normalize))
+
+set.seed(123)
+index <- sample(1:nrow(x_norm), 0.7 * nrow(x_norm))
+
+x_train <- x_norm[index, ]
+x_test  <- x_norm[-index, ]
+
+y_train <- y[index]
+y_test  <- y[-index]
+
+install.packages("class")   # once
+library(class)
+
+pred <- knn(
+  train = x_train,
+  test  = x_test,
+  cl    = y_train,
+  k     = 5
+)
+
+table(Predicted = pred, Actual = y_test)
+
+accuracy <- sum(pred == y_test) / length(y_test)
+accuracy
