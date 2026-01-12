@@ -58,3 +58,38 @@ FROM sales;
 
 
 
+//denserannk 
+SELECT
+ title,
+ rental_duration,
+ DENSE_RANK() OVER (
+ ORDER BY rental_duration DESC
+ ) AS rental_rank
+FROM film;
+
+//firstpayment
+select customer_id , payment_date ,amount , first_value(amount)
+over (partition by customer_id order by payment_date ) as first_payment
+from payment ;
+
+//rollup 
+select * from sales_by_store;
+select store, sum(total_sales) as total_collection from sales_by_store group by store with
+rollup;
+select * from actor_info;
+select actor_id, first_name, last_name
+from film_info
+union
+select category_id ,name
+from category
+
+//rollup
+select staff_id , sum(amount) as Total_Amount
+from payment
+group by staff_id with rollup
+
+select release_year , count(film_id) , sum(rental_rate) as total_collection
+from film
+group by release_year with rollup;
+
+
