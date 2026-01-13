@@ -1,0 +1,40 @@
+What is a Social Model?
+
+A Social Model describes:
+
+People (actors) involved in the system
+
+Roles and responsibilities of each actor
+
+Interactions and communication between actors
+
+
+In many hospitals and clinics, patients still face difficulties such as long waiting times, manual registration, uncertain appointment availability, and lack of proper communication with doctors.
+From a user’s point of view, the main goal is to book, view, and manage appointments easily without visiting the clinic physically.
+
+🔹 User Goals
+
+Book appointments online at convenient time slots
+
+View doctor availability in advance
+
+Receive appointment confirmation and reminders
+
+Avoid long queues and paperwork
+
+🔹 Obstacles Faced by Users
+
+Manual appointment booking process
+
+No real-time availability information
+
+Appointment clashes and delays
+
+No centralized record of appointments
+
+
+
+Patient  ----->  System  <-----  Doctor
+   |                |
+   |                |
+   ------> Admin <---

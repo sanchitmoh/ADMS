@@ -1,0 +1,22 @@
+//Mental Model
+
+
+[ Login ]
+
+    |
+    v
+[ Dashboard ]
+    |
+    v
+[ Choose Doctor ]
+    |
+    v
+[ Select Time Slot ]
+    |
+    v
+[ Confirm Appointment ]
+    |
+    v
+[ View / Manage Appointments ]
+A mental model represents how users think the system works in their mind while performing tasks.
+It focuses on user expectations, logic, and flow, not technical implementation.

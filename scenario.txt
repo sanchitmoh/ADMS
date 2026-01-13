@@ -1,0 +1,44 @@
+//scenario 
+Tasks Involved in the Scenario
+
+The scenario includes all three identified tasks:
+
+User Registration & Login
+
+Book an Appointment
+
+View / Manage Appointments
+
+📌 Scenario Explanation
+🎯 Scenario Title
+
+Booking and Managing a Doctor Appointment Online
+
+👤 User Persona Reference
+
+Name: Rahul Sharma
+Role: Patient
+Goal: Book and manage a doctor appointment quickly using an online system.
+
+🔹 Scenario Description (Step-by-Step)
+
+Rahul Sharma is a working professional who is feeling unwell and wants to consult a doctor without visiting the hospital to book an appointment.
+
+User Registration & Login (Task 1)
+Rahul opens the Online Appointment Booking System on his smartphone.
+As a first-time user, he registers by entering his name, email, phone number, and password.
+After successful registration, he logs into the system.
+
+Book an Appointment (Task 2)
+After logging in, Rahul views the dashboard and selects the General Physician department.
+He checks the list of available doctors, selects a doctor, chooses a suitable date and time slot, and confirms the appointment.
+The system immediately shows a confirmation message.
+
+View / Manage Appointments (Task 3)
+Rahul navigates to the “My Appointments” section to verify his booking.
+He can view appointment details such as doctor name, date, and time.
+If required, he can cancel or reschedule the appointment.
+
+This scenario demonstrates a smooth, user-friendly workflow covering all major system tasks.
+
+📌 Scenario Sketch (For Practical / Exam)
